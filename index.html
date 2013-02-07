@@ -9,77 +9,37 @@
 <meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
 <meta name="viewport" content="width=device-width" />
 
-<!-- iOS -->
-<meta name="apple-mobile-web-app-title" content="Lake Country Insurance Services">
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-
-<!-- iPhone -->
-<link href="icons/apple-touch-icon-57x57.png" sizes="57x57" rel="apple-touch-icon">
-<link href="icons/apple-touch-startup-image-320x460.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
-
-<!-- iPhone (Retina) -->
-<link href="icons/apple-touch-icon-114x114.png" sizes="114x114" rel="apple-touch-icon">
-<link href="icons/apple-touch-startup-image-640x920.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-
-<!-- iPhone 5 -->
-<link href="icons/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-
-<!-- iPad -->
-<link href="icons/apple-touch-icon-72x72.png" sizes="72x72" rel="apple-touch-icon">
-<link href="icons/apple-touch-startup-image-768x1004.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
-<link href="icons/apple-touch-startup-image-748x1024.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
-
-<!-- iPad (Retina) -->
-<link href="icons/apple-touch-icon-144x144.png" sizes="144x144" rel="apple-touch-icon">
-<link href="icons/apple-touch-startup-image-1536x2008.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-<link href="icons/apple-touch-startup-image-1496x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-
-<!-- Add PhoneGap 
+<!-- Add PhoneGap -->
 <script type="text/javascript" src="phonegap.js"></script>
 <script type="text/javascript" src="childbrowser.js"></script>
--->
 
 <!-- Call jQuery Mobile -->
 <script src="scripts/jquery-1.8.3.min.js"></script>
 <script src="scripts/jquery.mobile-1.3.0-rc.1.min.js"></script>
 <link rel="stylesheet" href="css/jquery.mobile.structure-1.3.0-rc.1.min.css" />
-<link rel="stylesheet" href="css/theme.css" />
+<link rel="stylesheet" href="css/theme.min.css" />
 <link rel="stylesheet" href="css/app-platform.css" />
 
-
-<!-- iOS add to home screen options -->
-	<script type="text/javascript">
-		var addToHomeConfig = {
-		animationIn: 'bubble',
-		animationOut: 'drop',
-		lifespan:100000,
-		touchIcon:true,
-		};
-	</script>
-	<script type="text/javascript">
-		$(document).bind('pageshow', function() {
-		var activePage = $('.page.ui-page-active');
-		activePage.find('input[placeholder], textarea[placeholder]').placeholder();
-		});
-	</script>
-
-<!-- Reflow layout, Form Placeholder, iOS home screen popup -->
-	<script type="text/javascript" src="scripts/app-platform.js"></script>
 	<script>
-		$(function() {
-		$('input, textarea').placeholder();
-		});
-	</script>
+	$(window).bind('orientationchange resize', function(event){
+      if(event.orientation) {
+            if(event.orientation == 'portrait') {
+				$( "#claimtable" ).table( "refresh" );
+				$( "#agenttable" ).table( "refresh" );
+	          } else if (event.orientation == 'landscape') {
+				$( "#claimtable" ).table( "refresh" );
+				$( "#agenttable" ).table( "refresh" );
+      });
+	  </script>
 </head>
-
+	  
 <body>
 
 <!-- Home -->
 <div data-role="page" data-theme="a" id="home">
 	
 	<div data-role="header" data-theme="a" align="center"> <img src="structure/logo.png" alt="logo">
-		<div data-role="navbar" data-iconpos="top">
+		<div data-role="navbar">
 			<ul>
 				<li><a href="#home" data-icon="home">Home</a></li>
 				<li><a href="#claim" data-icon="alert">Make a Claim</a></li>
@@ -127,16 +87,14 @@
 		<div align="center">
         <a id="body" href="#help" data-rel="popup" data-position-to="window" data-transition="pop">How does this work?</a><br />
         </div>
-		<a href="" target="_blank" data-role="button" data-icon="email" data-transition="slide">Email Referral</a>
-		<a href="" target="_blank" data-role="button" data-icon="email" data-transition="slide">Send this app</a> <br />
-		<strong>Contact</strong> <a href="tel:6124247317" data-role="button" data-icon="phone">612-424-7317</a> <a href="mailto:joe@lakesideins.com" target="_blank" data-role="button" data-icon="email">joe@lakesideins.com</a> <a href="http://www.lcisagency.com" rel="external" data-role="button" data-icon="home" target="_blank">www.lcisagency.com</a> 
-			<!-- Phonegap external link
+		<a href="mailto:?cc=office%40lcisagency.com&subject=Lake%20Country%20Insurance%20Services&body=My%20name%20is%20Joe%20Springer%20and%20I%20am%20the%20owner%20of%20Lake%20Country%20Insurance%20Services.%20%20One%20of%20our%20mutual%20friends%20or%20a%20client%20of%20mine%20has%20referred%20you%20to%20me!%20%20I%20am%20an%20Independent%20Insurance%20Agent%20and%20I%20work%20with%20over%2010%20companies%20to%20find%20the%20best%20policy%20for%20the%20best%20price%20on%20your%20home%20and%20auto%20insurance.%20%20I%20regularly%20save%20my%20clients%20hundreds%2C%20if%20not%20thousands%20of%20dollars%20on%20their%20insurance!%20%20The%20most%20I%20have%20ever%20saved%20one%20family%20is%20%243200%20a%20year!!%0D%0A%20%0D%0AI%20look%20forward%20to%20talking%20to%20you%20soon.%0D%0A%20%0D%0AJoe%20Springer%0D%0A612-242-1392" target="_blank" data-role="button" data-icon="email" data-transition="slide">Email Referral</a>
+		<a href="mailto:?cc=office%40lcisagency.com&subject=Get%20the%20Lake%20Country%20Insurance%20Services%20App&body=To%20get%20our%20mobile%20app%20go%20to%20http%3A%2F%2Flakecountry.app-platform.net%2F%20and%20follow%20the%20instructions%20for%20your%20advice.%0D%0A%0D%0AThank%20you%2C%20%0D%0A%20%0D%0AJoe%20Springer%0D%0A612-242-1392" target="_blank" data-role="button" data-icon="email" data-transition="slide">Send this app</a> <br />
+		<strong>Contact</strong> <a href="tel:6124247317" data-role="button" data-icon="phone">612-424-7317</a> <a href="mailto:joe@lcisagency.com" target="_blank" data-role="button" data-icon="email">joe@lcisagency.com</a> <a href="http://www.lcisagency.com" rel="external" data-role="button" data-icon="home" target="_blank">www.lcisagency.com</a> 
+			<!-- Phonegap external link -->
 				<a data-role="button" data-icon="home" target="_blank" onClick="window.plugins.childBrowser.openExternal('http://www.lcisagency.com');">www.lcisagency.com</a>
-			--> 
-		<a href="http://www.facebook.com/LakeCountryInsurance" rel="external" data-role="button" data-icon="facebook" target="_blank">facebook</a> 
-			<!-- Phonegap external link
-				<a data-role="button" data-icon="facebook" target="_blank" onClick="window.plugins.childBrowser.openExternal('http://www.facebook.com/LakeCountryInsurance');">facebook</a>
-			--> 
+			
+			<!-- Phonegap external link -->
+				<a data-role="button" data-icon="facebook" target="_blank" onClick="window.plugins.childBrowser.openExternal('http://www.facebook.com/LakeCountryInsurance');">facebook</a>			
 	</div>
 	<!-- /Content -->
 	
@@ -302,7 +260,7 @@
 	<div data-role="content">
 		<h2 style="text-align: center">Contact an Agent Today!</h2>
 		
-			<table data-role="table" class="ui-responsive" id="agenttable">
+			<table data-role="table" class="table-stripe ui-responsive" id="agenttable">
 				<thead>
 					<tr>
 						<th>Agent</th>
