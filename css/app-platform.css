@@ -395,12 +395,9 @@ http://jquerymobile.com/demos/1.2.0/ */
 	}
 }
 
-.center-wrapper{
+.center{
 text-align: center;
 }
-.center-wrapper * {
-margin: 0 auto;
-}	
 
 @media ( min-width: 40em ) {
   /* Show the table header rows and set all cells to display: table-cell */ 
