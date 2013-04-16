@@ -226,7 +226,7 @@ http://cubiq.org/add-to-home-screen */
 
 
 /* 960 Grid */ 
-.ui-btn, .ui-collapsible, .bump {margin-left:10px; margin-right:10px;}
+.ui-btn, .ui-collapsible, .ui-controlgroup-controls, .bump {margin-left:10px; margin-right:10px;}
 
 .ui-divider960 {
 	width: 4% !important;

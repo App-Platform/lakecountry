@@ -57,29 +57,22 @@
         
         <div data-role="content" class="help">
             <h2>How does this work?</h2>
-            <p> <strong>Send a referral</strong><br />
-            Tap the Email Referral button and an email will be generated with information about Lake Country Insurance Services. Whoever is entered into the To: will receive the information, and Lake Country Insurance Services will have both your email address and your referral's email address for tracking purposes.<br />
-            <br />
-            <strong>Send this app</strong><br />
-            Tap the Send this app button to generate an email with a link for downloading this very app!<br />
-            <br />
-            <strong>Contact</strong><br />
-            The buttons under the Contact heading allow for contact with Lake Country Insurance Services, including email, our website and our facebook page.<br />
-            <br />
-            <strong>Make a Claim</strong><br />
-            The Make a Claim page has all the phone numbers you need to make a claim through your insurance provider. Just find your carrier and tap their number to call.<br />
-            <br />
-            <strong>Agents</strong><br />
-            The Agents page gives you direct access to contacting any Lake Country Insurance Serives Agents.<br />
-            <br />
-            <strong>App Examples</strong><br />
-            The buttons under App Examples include examples of several of our apps in action. These are weblinks to the live apps online as well as the instructional landing page for each. They provide an excellent reference for a potential customer to see our applications in action.<br />
-            <br />
-            <strong>Get Started on Your App!</strong><br />
-            The buttons under Get Started on Your App! includes an expandable form for a potential client to enter all of their information to get their own custom application. Follow the instructions in the form and capture all of the necessary data for best results.<br />
-            <br />
-            <strong>Get Your Own App</strong><br />
-            This button sends an email request for more information about getting your own app. It's semi-redundant, but is included in all of our apps.</p>
+            <p><strong>Send a referral</strong><br>
+            Tap the &quot;Email Referral&quot; button and enter the email address of the person you want to refer into the &quot;Referral Email&quot; field, enter your name into the &quot;Your Name&quot; field and if you would like to include any other information enter it into the &quot;Message&quot; field. Once you are done tap the &quot;Submit&quot; button and an email will be sent to the email address provided. An email alert will also be sent to 
+            <!---->Lake Country for tracking purposes.</p>
+            <p><strong>Send this app</strong><br>
+            Tap the &quot;Send this app&quot; button and enter the email address of the person you want to send the app into the &quot;Email&quot; field and enter your name into the &quot;Your Name&quot; field. Once you are done tap the &quot;Submit&quot; button and an email will a link to the apps Landing Page be sent to the email address provided. An email alert will also be sent to 
+            <!---->Lake Country for tracking purposes.</p>
+    		<p><strong>Contact</strong><br>
+		  	The buttons under the Contact heading allow for contact with Lake Country Insurance Services, including email, our website and our facebook page.</p>
+            <p><strong>Make a Claim</strong><br />
+            The Make a Claim page has all the phone numbers you need to make a claim through your insurance provider. Just find your carrier and tap their number to call.</p>
+            <p><strong>Agents</strong><br />
+            The Agents page gives you direct access to contacting any Lake Country Insurance Serives Agents.</p>
+    		<p><strong>Get Your Own App</strong><br>
+   		    Tap the &quot;Get your own app!&quot; button and enter the email address of the person interested in getting more information about apps from App-Platform.net in the &quot;Email&quot; field. Once you are done tap the &quot;Submit&quot; button and a representative of App-Platform.net will be in touch.</p>
+        	<p><strong>Learn more</strong><br>
+            Go to <a target="_blank" onClick="window.plugins.childBrowser.openExternal('http://app-platform.net');">App-Platform.net</a> to learn more about this app and others.</p>
         </div>
       <div data-role="footer" class="center"><a href="#" data-role="button" data-inline="true" data-theme="a" data-rel="back" data-icon="delete" style="margin-top:10px; margin-bottom:10px;">Close Window</a></div>
     </div><!-- /Help Popup -->
@@ -90,8 +83,47 @@
         <p class="center">
         	<a id="body" href="#help" data-rel="popup" data-position-to="window" data-transition="pop">How does this work?</a>
         </p>
-        <a href="mailto:?cc=office%40lcisagency.com&subject=Lake%20Country%20Insurance%20Services&body=My%20name%20is%20Joe%20Springer%20and%20I%20am%20the%20owner%20of%20Lake%20Country%20Insurance%20Services.%20%20One%20of%20our%20mutual%20friends%20or%20a%20client%20of%20mine%20has%20referred%20you%20to%20me!%20%20I%20am%20an%20Independent%20Insurance%20Agent%20and%20I%20work%20with%20over%2010%20companies%20to%20find%20the%20best%20policy%20for%20the%20best%20price%20on%20your%20home%20and%20auto%20insurance.%20%20I%20regularly%20save%20my%20clients%20hundreds%2C%20if%20not%20thousands%20of%20dollars%20on%20their%20insurance!%20%20The%20most%20I%20have%20ever%20saved%20one%20family%20is%20%243200%20a%20year!!%0D%0A%20%0D%0AI%20look%20forward%20to%20talking%20to%20you%20soon.%0D%0A%20%0D%0AJoe%20Springer%0D%0A612-242-1392" target="_blank" data-role="button" data-icon="email" data-transition="slide">Email Referral</a>
-        <a href="mailto:?cc=office%40lcisagency.com&subject=Get%20the%20Lake%20Country%20Insurance%20Services%20App&body=To%20get%20our%20mobile%20app%20go%20to%20http%3A%2F%2Flakecountry.app-platform.net%2F%20and%20follow%20the%20instructions%20for%20your%20advice.%0D%0A%0D%0AThank%20you%2C%20%0D%0A%20%0D%0AJoe%20Springer%0D%0A612-242-1392" target="_blank" data-role="button" data-icon="email" data-transition="slide">Send this app</a>
+        
+        <!-- Email referral -->
+        <a id="emailRefBtn" href="" target="_blank" data-role="button" data-icon="email">Email Referral</a>
+        <form id="emailReferral" class="emailReferral" method="post" data-ajax="false" style="display:none; padding-left:10px; padding-right:10px; padding-bottom:20px;">
+        <div data-role="fieldcontain" class="ui-hide-label">
+          <label for="Email">Referral Email</label>
+          <input type="text" name="Email" id="Email" value="" placeholder="Referral Email" class="required email" data-mini="true" />
+        </div>
+        <div data-role="fieldcontain" class="ui-hide-label">
+          <label for="Name">Your Name</label>
+          <input type="text" name="Name" id="Name" value="" placeholder="Your Name" data-mini="true" class="required" />
+        </div>
+        <label for="Message"><span class="smallText">Message (optional)</span></label>
+        <textarea name="Message" id="Message" style="background:#ffffff;" data-mini="true"></textarea>
+        
+        <div data-role="controlgroup" data-type="horizontal" style="margin-left:-10px;">
+        <input type="submit" id="post_submit" name="submit" value="Submit" class="submit-value" data-inline="true" data-mini="true" data-icon="check" />
+        <a href="#help" data-role="button" data-rel="popup" data-position-to="window" data-transition="pop" data-mini="true" data-icon="alert">Help</a>
+        <a id="emailRefReset" href="" data-role="button" data-inline="true" data-mini="true" data-icon="delete">Clear</a>
+        </div>
+        </form><!-- /email referral -->
+        
+        <!-- Send this app -->
+        <a id="sendAppBtn" href="" target="_blank" data-role="button" data-icon="email">Send this app</a>
+        <form id="sendApp" class="sendApp" method="post" data-ajax="false" style="display:none; padding-left:10px; padding-right:10px; padding-bottom:20px;">
+        <div data-role="fieldcontain" class="ui-hide-label">
+          <label for="Email">Email</label>
+          <input type="text" name="Email" id="Email" value="" placeholder="Email" class="required email" data-mini="true" />
+        </div>
+        <div data-role="fieldcontain" class="ui-hide-label">
+          <label for="Name">Your Name</label>
+          <input type="text" name="Name" id="Name" value="" placeholder="Your Name" data-mini="true" class="required" />
+        </div>
+        
+        <div data-role="controlgroup" data-type="horizontal" style="margin-left:-10px;">
+        <input type="submit" id="post_submit" name="submit" value="Submit" class="submit-value" data-inline="true" data-mini="true" data-icon="check" />
+        <a href="#help" data-role="button" data-rel="popup" data-position-to="window" data-transition="pop" data-mini="true" data-icon="alert">Help</a>
+        <a id="sendAppReset" href="" data-role="button" data-inline="true" data-mini="true" data-icon="delete">Clear</a>
+        </div>
+        </form><!-- /send this app -->
+
     </div><!-- /block a -->
     <div class="grid_6 ui-block960-b">
         <p><strong>Contact</strong></p>
@@ -113,10 +145,24 @@
   
 <div data-role="footer" data-theme="a">
     <div class="footerText"> 
+        <!-- Get your own app -->
+        <a id="getYourOwnAppBtn" href="" target="_blank" data-role="button" data-theme="a" data-inline="true" data-icon="email">Get your own app!</a>
+        <form id="getYourOwnApp" class="getYourOwnApp" method="post" data-ajax="false" style="display:none;">
+        <div style="margin-left:auto; margin-right:auto; max-width:250px; margin-top:-10px;">
+            <div data-role="fieldcontain" class="ui-hide-label">
+              <label for="Email">Email</label>
+              <input type="text" name="Email" id="Email" value="" placeholder="Email" class="required email" data-mini="true" />
+            </div>
+            <div data-role="controlgroup" data-type="horizontal">
+            <input type="submit" id="post_submit" name="submit" value="Submit" class="submit-value" data-inline="true" data-mini="true" data-icon="check" />
+            <a id="getYourOwnAppReset" href="" data-role="button" data-inline="true" data-mini="true" data-icon="delete">Clear</a>
+            </div>
+        </div>
+        </form><!-- /get your own app -->
+        <div style="clear:both"></div>
 		<script type="text/javascript">
 			copyright=new Date(); update=copyright.getFullYear(); document.write("&nbsp;Copyright &copy; "+ update + " Lake Country Insurance Services");
         </script> 
-        <p><a href="mailto:?cc=info%40app-platform.net&subject=Get%20Your%20Own%20App!&body=Go%20to%20http%3A%2F%2Fapp-platform.net%20to%20find%20out%20how%20to%20get%20your%20own%20app!" target="_blank" data-role="button" data-theme="a" data-inline="true" data-icon="email">Get your own app!</a></p> 
     </div>
 </div><!-- /footer -->
 </div><!-- /home -->
@@ -186,10 +232,24 @@
 
 <div data-role="footer" data-theme="a">
     <div class="footerText"> 
+        <!-- Get your own app -->
+        <a id="getYourOwnAppBtn2" href="" target="_blank" data-role="button" data-theme="a" data-inline="true" data-icon="email">Get your own app!</a>
+        <form id="getYourOwnApp2" class="getYourOwnApp2" method="post" data-ajax="false" style="display:none;">
+        <div style="margin-left:auto; margin-right:auto; max-width:250px; margin-top:-10px;">
+            <div data-role="fieldcontain" class="ui-hide-label">
+              <label for="Email">Email</label>
+              <input type="text" name="Email" id="Email" value="" placeholder="Email" class="required email" data-mini="true" />
+            </div>
+            <div data-role="controlgroup" data-type="horizontal">
+            <input type="submit" id="post_submit" name="submit" value="Submit" class="submit-value" data-inline="true" data-mini="true" data-icon="check" />
+            <a id="getYourOwnAppReset2" href="" data-role="button" data-inline="true" data-mini="true" data-icon="delete">Clear</a>
+            </div>
+        </div>
+        </form><!-- /get your own app -->
+        <div style="clear:both"></div>
 		<script type="text/javascript"> 
 			copyright=new Date(); update=copyright.getFullYear(); document.write("&nbsp;Copyright &copy; "+ update + " Lake Country Insurance Services");
         </script> 
-        <p><a href="mailto:?cc=info%40app-platform.net&subject=Get%20Your%20Own%20App!&body=Go%20to%20http%3A%2F%2Fapp-platform.net%20to%20find%20out%20how%20to%20get%20your%20own%20app!" target="_blank" data-role="button" data-theme="a" data-inline="true" data-icon="email">Get your own app!</a></p>
     </div>
 </div><!-- /footer -->
 </div><!-- /agents -->
@@ -316,10 +376,24 @@
   
 <div data-role="footer" data-theme="a">
     <div class="footerText"> 
+        <!-- Get your own app -->
+        <a id="getYourOwnAppBtn3" href="" target="_blank" data-role="button" data-theme="a" data-inline="true" data-icon="email">Get your own app!</a>
+        <form id="getYourOwnApp3" class="getYourOwnApp3" method="post" data-ajax="false" style="display:none;">
+        <div style="margin-left:auto; margin-right:auto; max-width:250px; margin-top:-10px;">
+            <div data-role="fieldcontain" class="ui-hide-label">
+              <label for="Email">Email</label>
+              <input type="text" name="Email" id="Email" value="" placeholder="Email" class="required email" data-mini="true" />
+            </div>
+            <div data-role="controlgroup" data-type="horizontal">
+            <input type="submit" id="post_submit" name="submit" value="Submit" class="submit-value" data-inline="true" data-mini="true" data-icon="check" />
+            <a id="getYourOwnAppReset3" href="" data-role="button" data-inline="true" data-mini="true" data-icon="delete">Clear</a>
+            </div>
+        </div>
+        </form><!-- /get your own app -->
+        <div style="clear:both"></div>
 		<script type="text/javascript">
 			copyright=new Date(); update=copyright.getFullYear(); document.write("&nbsp;Copyright &copy; "+ update + " Lake Country Insurance Services");
         </script> 
-        <p><a href="mailto:?cc=info%40app-platform.net&subject=Get%20Your%20Own%20App!&body=Go%20to%20http%3A%2F%2Fapp-platform.net%20to%20find%20out%20how%20to%20get%20your%20own%20app!" target="_blank" data-role="button" data-theme="a" data-inline="true" data-icon="email">Get your own app!</a></p>
     </div>
 </div><!-- /footer -->
 </div><!-- /make a claim -->
@@ -327,6 +401,125 @@
 <!-- Bump Headers -->
 <script>
 $(".grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12").find("p").css("margin-left", "10px");
+</script>
+
+<!-- Email Referral Validation -->
+<script type="text/javascript">
+$(function() {
+    $( "#emailReferral" ).validate({
+        submitHandler: function(form) {
+           var data= $(form).serialize()
+        
+                $.ajax({
+                type: "POST",
+                url: "http://lakecountry.app-platform.net/php/emailReferral.php",
+                data: data,
+                success: function(){
+                    $(form).fadeOut();
+                }
+                });
+            return false;
+        }
+    });
+});     
+</script>
+
+<!-- Send App Validation -->
+<script type="text/javascript">
+$(function() {
+    $( "#sendApp" ).validate({
+        submitHandler: function(form) {
+           var data= $(form).serialize()
+        
+                $.ajax({
+                type: "POST",
+                url: "http://lakecountry.app-platform.net/php/sendApp.php",
+                data: data,
+                success: function(){
+                    $(form).fadeOut();
+                }
+                });
+            return false;
+        }
+    });
+});     
+</script>
+
+<!-- Get Your Own App Validation -->
+<script type="text/javascript">
+$(function() {
+    $( "#getYourOwnApp" ).validate({
+        submitHandler: function(form) {
+           var data= $(form).serialize()
+        
+                $.ajax({
+                type: "POST",
+                url: "http://lakecountry.app-platform.net/php/getYourOwnApp.php",
+                data: data,
+                success: function(){
+                    $(form).fadeOut();
+                }
+                });
+            return false;
+        }
+    });
+});     
+
+$(function() {
+    $( "#getYourOwnApp2" ).validate({
+        submitHandler: function(form) {
+           var data= $(form).serialize()
+        
+                $.ajax({
+                type: "POST",
+                url: "http://lakecountry.app-platform.net/php/getYourOwnApp.php",
+                data: data,
+                success: function(){
+                    $(form).fadeOut();
+                }
+                });
+            return false;
+        }
+    });
+}); 
+
+$(function() {
+    $( "#getYourOwnApp3" ).validate({
+        submitHandler: function(form) {
+           var data= $(form).serialize()
+        
+                $.ajax({
+                type: "POST",
+                url: "http://lakecountry.app-platform.net/php/getYourOwnApp.php",
+                data: data,
+                success: function(){
+                    $(form).fadeOut();
+                }
+                });
+            return false;
+        }
+    });
+});     
+</script>
+
+<script>
+<!-- Email referral button -->
+$(function() {$("#emailRefBtn").toggle(function(){$("#emailReferral").show(); },function(){$("#emailReferral").hide(); $("#emailReferral")[0].reset();});});
+$(function() {$('#emailRefReset').click( function() { $("#emailReferral")[0].reset(); });});
+
+<!-- Send App button -->
+$(function() {$("#sendAppBtn").toggle(function(){$("#sendApp").show();},function(){$("#sendApp").hide(); $("#sendApp")[0].reset();});});
+$(function() {$('#sendAppReset').click( function() { $("#sendApp")[0].reset(); });});
+
+<!-- Get Your Own App button -->
+$(function() {$("#getYourOwnAppBtn").toggle(function(){$("#getYourOwnApp").show();},function(){ $("#getYourOwnApp").hide(); $("#getYourOwnApp")[0].reset();});});
+$(function() {$('#getYourOwnAppReset').click( function() { $("#getYourOwnApp")[0].reset(); });});
+
+$(function() {$("#getYourOwnAppBtn2").toggle(function(){$("#getYourOwnApp2").show();},function(){$("#getYourOwnApp2").hide(); $("#getYourOwnApp2")[0].reset();});});
+$(function() {$('#getYourOwnAppReset3').click( function() { $("#getYourOwnApp3")[0].reset(); });});
+
+$(function() {$("#getYourOwnAppBtn3").toggle(function(){$("#getYourOwnApp3").show();},function(){ $("#getYourOwnApp3").hide(); $("#getYourOwnApp3")[0].reset();});});
+$(function() {$('#getYourOwnAppReset3').click( function() { $("#getYourOwnApp3")[0].reset(); });});
 </script>
 
 </body>
