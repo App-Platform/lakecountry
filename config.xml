@@ -32,6 +32,4 @@
 	<gap:splash src="iconsAndroid/android-startup-image-480x800.png" gap:platform="android" gap:density="hdpi" />
 	<gap:splash src="iconsAndroid/android-startup-image-720x1280.png" gap:platform="android" gap:density="xhdpi" />
 	
-	<gap:plugin name="ChildBrowser" />
-
 	</widget>
